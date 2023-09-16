@@ -20,7 +20,7 @@ form_control = data["Уровень контроля"].unique()
 form_control_str = ', '.join(map(str, form_control))
 
 # Года:
-years = data["Год"].unique()
+years = data[data["Группа"] == "ПИ101"]["Год"].unique()
 years_str = ', '.join(map(str, years))
 
 print(" В исходном датасете содержалось ", total_marks, " оценок, из них ", pi101_marks, "оценок относятся к группе ПИ101.", '\n',"В датасете находятся оценки ", total_num_stud, "студентов,  со следующими личными номерами (по ПИ101):",pi101_num_stud_str,'\n', "Используемые формы контроля:", form_control_str,'\n', "Данные представлены по следующим учебным годам:", years_str )
